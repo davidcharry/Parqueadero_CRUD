@@ -13,7 +13,7 @@ const UsuarioSchema = mongoose.Schema({
         required: true
     },
     Tip_Usu: {
-        type: Number,
+        type: String,
         required: true
     },
     Nom_Usua: {
