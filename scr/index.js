@@ -2,7 +2,9 @@ const parser = require("body-parser");
 const express = require('express');
 const app = express();
 const port = 3000;
-
+const MExamenRoutes = require("./routes/MExamen");
+const MUsuarioRoutes = require("./routes/MUsuario");
+const MPreguntasRoutes = require("./routes/MPreguntas");
 const mongoose = require("mongoose");
 
 require('dotenv').config();
@@ -10,7 +12,9 @@ app.use(parser.urlencoded({ extended: false })); //permite leer los datos que vi
 app.use(parser.json()); // transforma los datos a formato JSON
 
 //Gestión de las rutas usando el middleware
-
+app.use("/api", MExamenRoutes);
+app.use("/api", MUsuarioRoutes);
+app.use("/api", MPreguntasRoutes);
 app.use(express.json());
 
 //Conexión a la base de datos
