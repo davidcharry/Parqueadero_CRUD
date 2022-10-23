@@ -1,30 +1,30 @@
 const mongoose = require("mongoose"); // importando el componente mogoose
 const UsuarioSchema = mongoose.Schema({
-    Nombre: {
+    nombre: {
         type: String,
         required: true
     },
-    Cedula: {
+    cedula: {
         type: String,
         required: true
     },
-    Nom_Institucion: {
+    nom_institucion: {
         type: String,
         required: true
     },
-    Tip_Usu: {
+    tip_usu: {
         type: String,
         required: true
     },
-    Nom_Usua: {
+    nom_usua: {
         type: String,
         required: true
     },
-    Contrasena: {
+    contrasena: {
         type: String,
         required: true
     },
-    Fecha: {
+    fecha: {
         type: String,
         required: true
     }

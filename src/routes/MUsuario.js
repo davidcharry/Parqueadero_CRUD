@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router(); //manejador de rutas de express
 const UsuarioSchema = require("../models/MUsuario");
 
-//Crear un nuevo material
+//Crear un nuevo Usuario
 router.post("/MUsuario", (req, res) => {
     const MUsuario = UsuarioSchema(req.body);
     MUsuario
@@ -11,15 +11,15 @@ router.post("/MUsuario", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-//Consultar todos los Materiales didacticos
+//Consultar todos los Usuarios
 router.get("/MUsuario", (req, res) => {
-    MdidacticoSchema.find()
+    UsuarioSchema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
 
-//Consultar un material por su id
+//Consultar un Usuario por su id
 router.get("/MUsuario/:id", (req, res) => {
     const { id } = req.params;
     UsuarioSchema
@@ -28,20 +28,20 @@ router.get("/MUsuario/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-//Modificar el nombre de un material por su id
+//Modificar un Usuario por su id
 router.put("/MUsuario/:id", (req, res) => {
     const { id } = req.params;
-    const {Nombre, Cedula, Nom_Institucion, Tip_Usu, Nom_Usua, Contrasena, Fecha } = req.body;
+    const { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha } = req.body;
     UsuarioSchema
         .updateOne({ _id: id }, {
-            $set: { Nombre, Cedula, Nom_Institucion, Tip_Usu, Nom_Usua, Contrasena, Fecha }
+            $set: { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
 
-//Eliminar un material por su id
+//Eliminar un Usuario por su id
 router.delete("/MUsuario/:id", (req, res) => {
     const { id } = req.params;
     UsuarioSchema
