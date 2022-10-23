@@ -21,11 +21,11 @@ const UsuarioSchema = mongoose.Schema({
         required: true
     },
     Contrasena: {
-        type: password,
+        type: String,
         required: true
     },
     Fecha: {
-        type: data,
+        type: String,
         required: true
     }
 });
