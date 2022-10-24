@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"); // importando el componente mogoose
-const PreguntasSchema = mongoose.Schema({
+const PreguntaSchema = mongoose.Schema({
     Opcion1: {
         type: String,
         required: true
@@ -22,4 +22,4 @@ const PreguntasSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Mpreguntas', PreguntasSchema);
+module.exports = mongoose.model('Mpregunta', PreguntaSchema);
