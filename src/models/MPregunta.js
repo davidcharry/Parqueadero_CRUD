@@ -22,4 +22,4 @@ const PreguntaSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Mpregunta', PreguntaSchema);
+module.exports = mongoose.model('MPregunta', PreguntaSchema);
