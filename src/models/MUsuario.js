@@ -27,7 +27,9 @@ const UsuarioSchema = mongoose.Schema({
     fecha: {
         type: String,
         required: true
-    }
+    },
+    Examen: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'MExamen'}]
 });
 
 module.exports = mongoose.model('MUsuario', UsuarioSchema);
