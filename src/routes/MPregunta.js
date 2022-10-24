@@ -28,13 +28,22 @@ router.get("/MPregunta/:id", (req, res) => {
 });
 
 //Modificar un Pregunta por su id
-router.put("/MUsuario/:id", (req, res) => {
+router.put("/MPregunta/:id", (req, res) => {
     const { id } = req.params;
     const { Opcion1, Opcion2, Opcion3, Opcion4, Res_Correcta } = req.body;
-    UsuarioSchema
+    PreguntaSchema
         .updateOne({ _id: id }, {
             $set: { Opcion1, Opcion2, Opcion3, Opcion4, Res_Correcta }
         })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+//Eliminar un Pregunta por su id
+router.delete("/MPregunta/:id", (req, res) => {
+    const { id } = req.params;
+    UsuarioSchema
+        .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
