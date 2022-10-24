@@ -17,7 +17,7 @@ const PreguntaSchema = mongoose.Schema({
         required: true
     },
     Res_Correcta: {
-        type: Number,
+        type: String,
         required: true
     }
 });
