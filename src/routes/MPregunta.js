@@ -42,7 +42,7 @@ router.put("/MPregunta/:id", (req, res) => {
 //Eliminar un Pregunta por su id
 router.delete("/MPregunta/:id", (req, res) => {
     const { id } = req.params;
-    UsuarioSchema
+    PreguntaSchema
         .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
