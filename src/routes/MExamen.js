@@ -17,3 +17,12 @@ router.get("/MExamen", (req, res) => {
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+//Consultar un Examen por su id
+router.get("/MExamen/:id", (req, res) => {
+    const { id } = req.params;
+    ExamenSchema
+        .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
