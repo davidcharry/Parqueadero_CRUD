@@ -27,4 +27,16 @@ router.get("/MPregunta/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+//Modificar un Pregunta por su id
+router.put("/MUsuario/:id", (req, res) => {
+    const { id } = req.params;
+    const { Opcion1, Opcion2, Opcion3, Opcion4, Res_Correcta } = req.body;
+    UsuarioSchema
+        .updateOne({ _id: id }, {
+            $set: { Opcion1, Opcion2, Opcion3, Opcion4, Res_Correcta }
+        })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router;
