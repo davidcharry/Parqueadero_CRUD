@@ -1,49 +1,48 @@
 const express = require("express");
 const router = express.Router(); //manejador de rutas de express
-const UsuarioSchema = require("../models/MUsuario");
+const PreguntaSchema = require("../models/MPregunta");
 
-//Crear un nuevo Usuario
-router.post("/MUsuario", (req, res) => {
-    const MUsuario = UsuarioSchema(req.body);
-    MUsuario
+//Crear un nueva Pregunta
+router.post("/MPregunta", (req, res) => {
+    const MPregunta = PreguntaSchema(req.body);
+    MPregunta
         .save()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-//Consultar todos los Usuarios
-router.get("/MUsuario", (req, res) => {
-    UsuarioSchema.find()
+//Consultar todas las Preguntas
+router.get("/MPregunta", (req, res) => {
+    PreguntaSchema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-
-//Consultar un Usuario por su id
-router.get("/MUsuario/:id", (req, res) => {
+//Consultar una Pregunta por su id
+router.get("/MPregunta/:id", (req, res) => {
     const { id } = req.params;
-    UsuarioSchema
+    PreguntaSchema
         .findById(id)
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-//Modificar un Usuario por su id
-router.put("/MUsuario/:id", (req, res) => {
+//Modificar un Pregunta por su id
+router.put("/MPregunta/:id", (req, res) => {
     const { id } = req.params;
-    const { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha, Examen} = req.body;
-    UsuarioSchema
+    const { Opcion1, Opcion2, Opcion3, Opcion4, Res_Correcta } = req.body;
+    PreguntaSchema
         .updateOne({ _id: id }, {
-            $set: { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha, Examen }
+            $set: { Opcion1, Opcion2, Opcion3, Opcion4, Res_Correcta }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-//Eliminar un Usuario por su id
-router.delete("/MUsuario/:id", (req, res) => {
+//Eliminar un Pregunta por su id
+router.delete("/MPregunta/:id", (req, res) => {
     const { id } = req.params;
-    UsuarioSchema
+    PreguntaSchema
         .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
