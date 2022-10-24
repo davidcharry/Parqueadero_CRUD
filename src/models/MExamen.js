@@ -27,9 +27,7 @@ const ExamenSchema = mongoose.Schema({
     respuesta_n: {
         type: Number,
         required: true
-    },
-    Preguntas: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'MPregunta'}]
+    }
 });
 
 module.exports = mongoose.model('MExamen', ExamenSchema);
