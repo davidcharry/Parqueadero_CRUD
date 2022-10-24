@@ -9,11 +9,11 @@ const ExamenSchema = mongoose.Schema({
         required: true
     },
     fecha_ini: {
-        type: Date,
+        type: String,
         required: true
     },
     fecha_fin: {
-        type: Date,
+        type: String,
         required: true
     },
     pregunta_n: {
