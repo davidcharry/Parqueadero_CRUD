@@ -10,3 +10,10 @@ router.post("/MExamen", (req, res) => {
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+//Consultar todos los Examenes
+router.get("/MExamen", (req, res) => {
+    ExamenSchema.find()
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
