@@ -31,10 +31,10 @@ router.get("/MUsuario/:id", (req, res) => {
 //Modificar un Usuario por su id
 router.put("/MUsuario/:id", (req, res) => {
     const { id } = req.params;
-    const { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha } = req.body;
+    const { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha, Examen} = req.body;
     UsuarioSchema
         .updateOne({ _id: id }, {
-            $set: { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha }
+            $set: { nombre, cedula, nom_institucion, tip_usu, nom_usua, contrasena, fecha, Examen }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));

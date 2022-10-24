@@ -29,7 +29,7 @@ const ExamenSchema = mongoose.Schema({
         required: true
     },
     Preguntas: [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Mpregunatas'}]
+        type: mongoose.Schema.Types.ObjectId, ref: 'Mpreguntas'}]
 });
 
 module.exports = mongoose.model('MExamen', ExamenSchema);
