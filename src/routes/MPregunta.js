@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router(); //manejador de rutas de express
 const PreguntaSchema = require("../models/MPregunta");
 
-
 //Crear un nueva Pregunta
 router.post("/MPregunta", (req, res) => {
     const MPregunta = PreguntaSchema(req.body);
@@ -18,3 +17,5 @@ router.get("/MPregunta", (req, res) => {
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+module.exports = router;
