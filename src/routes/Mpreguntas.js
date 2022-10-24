@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router(); //manejador de rutas de express
-const PreguntasSchema = require("../models/MPreguntas");
+const PreguntasSchema = require("../models/Mpreguntas");
 
 
 //Crear un nueva Pregunta
-router.post("/MPreguntas", (req, res) => {
+router.post("/Mpreguntas", (req, res) => {
     const Mpreguntas = PreguntasSchema(req.body);
     Mpreguntas
         .save()
@@ -13,8 +13,8 @@ router.post("/MPreguntas", (req, res) => {
 });
 
 //Consultar todas las Preguntas
-router.get("/MPreguntas", (req, res) => {
-    UsuarioSchema.find()
+router.get("/Mpreguntas", (req, res) => {
+    PreguntasSchema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });

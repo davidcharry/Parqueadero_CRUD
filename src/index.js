@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 const MExamenRoutes = require("./routes/MExamen");
 const MUsuarioRoutes = require("./routes/MUsuario");
-const MPreguntasRoutes = require("./routes/MPreguntas");
+const MPreguntasRoutes = require("./routes/Mpreguntas");
 const mongoose = require("mongoose");
 
 require('dotenv').config();

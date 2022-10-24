@@ -22,4 +22,4 @@ const PreguntasSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('MPreguntas', PreguntasSchema);
+module.exports = mongoose.model('Mpreguntas', PreguntasSchema);
