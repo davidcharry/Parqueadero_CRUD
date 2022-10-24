@@ -18,4 +18,13 @@ router.get("/MPregunta", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+//Consultar una Pregunta por su id
+router.get("/MPregunta/:id", (req, res) => {
+    const { id } = req.params;
+    PreguntaSchema
+        .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router;
