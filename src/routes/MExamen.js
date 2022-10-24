@@ -30,10 +30,10 @@ router.get("/MExamen/:id", (req, res) => {
 //Modificar un Examen por su id
 router.put("/MExamen/:id", (req, res) => {
     const { id } = req.params;
-    const { nombre, curso, fecha_ini, fecha_fin, pregunta_n, opcion_n, respuesta_n } = req.body;
+    const { nombre, curso, fecha_ini, fecha_fin, pregunta_n, opcion_n, respuesta_n, Preguntas } = req.body;
     ExamenSchema
         .updateOne({ _id: id }, {
-            $set: { nombre, curso, fecha_ini, fecha_fin, pregunta_n, opcion_n, respuesta_n }
+            $set: { nombre, curso, fecha_ini, fecha_fin, pregunta_n, opcion_n, respuesta_n, Preguntas }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
