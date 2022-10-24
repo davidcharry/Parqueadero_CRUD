@@ -26,3 +26,15 @@ router.get("/MExamen/:id", (req, res) => {
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+//Modificar un Usuario por su id
+router.put("/MExamen/:id", (req, res) => {
+    const { id } = req.params;
+    const { nombre, curso, fecha_ini, fecha_fin, pregunta_n, opcion_n, respuesta_n } = req.body;
+    ExamenSchema
+        .updateOne({ _id: id }, {
+            $set: { nombre, curso, fecha_ini, fecha_fin, pregunta_n, opcion_n, respuesta_n }
+        })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});

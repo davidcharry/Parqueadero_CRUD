@@ -40,7 +40,6 @@ router.put("/MUsuario/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-
 //Eliminar un Usuario por su id
 router.delete("/MUsuario/:id", (req, res) => {
     const { id } = req.params;
